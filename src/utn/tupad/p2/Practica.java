@@ -4,6 +4,7 @@ import java.util.Scanner;
 import tp2.EjerciciosTp2;
 import tp3.EjerciciosTp3;
 import tp4.EjercicioTp4;
+import tp6.EjerciciosTp6;
 
 /**
  *
@@ -19,6 +20,7 @@ public class Practica {
         EjerciciosTp2 tp2 = new EjerciciosTp2();
         EjerciciosTp3 tp3 = new EjerciciosTp3();
         EjercicioTp4 tp4 = new EjercicioTp4();
+        EjerciciosTp6 tp6 = new EjerciciosTp6();
         
         System.out.println("-----------------------------------------------------------------------------------------");
         System.out.println("Bienvenido a los trabajos practicos de la materia Programacion II");
@@ -26,9 +28,11 @@ public class Practica {
         System.out.println("-----------------------------------------------------------------------------------------");
         System.out.println("Ingrese el numero de TP que desea ejecutar: ");
         System.out.println("Nota: TP n° 1 en Repo Aparte.");
+        System.out.println("Nota: TP n° 5 es solo definicion de clases y diagramas UML.");
         System.out.println("1. TP n° 2");
         System.out.println("2. TP n° 3");
         System.out.println("3. TP n° 4");
+        System.out.println("4. TP n° 6");
         System.out.println("0. Salir");
         
         System.out.print("\nIngrese una opcion: ");
@@ -39,6 +43,7 @@ public class Practica {
             case 1 -> tp2.ejecutar();
             case 2 -> tp3.ejecutar();
             case 3 -> tp4.ejecutar();
+            case 4 -> tp6.ejecutar();
             default -> System.out.println("Error: Opcion Invalida.");
         }
     }
