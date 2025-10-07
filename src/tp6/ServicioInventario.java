@@ -17,11 +17,11 @@ import tp6.inventario.Producto;
 public class ServicioInventario {
     private Inventario inventario;
 
-    public ServicioInventario(Inventario inventario) {
-        this.inventario = inventario;
+    public ServicioInventario() {
+        this.inventario = new Inventario();
     }    
     
-    public void crearSeedInventario() {
+    public void seedInventario() {
         Seeder seeder = new Seeder();
         seeder.seedInventarioProductos(inventario);
     }
@@ -62,11 +62,16 @@ public class ServicioInventario {
             CategoriaProducto categoria = categorias[eleccionCategoria-1];
         
             ArrayList<Producto> productosPorCategoria = inventario.filtrarPorCategoria(categoria);
-
-            System.out.println("\nProductos de la categoria " + categoria.name() + ": ");
-            for (Producto producto : productosPorCategoria) {
-                producto.mostrarInfo();
+            
+            if (productosPorCategoria.isEmpty()) {
+                System.out.println("No se encontraron productos en la categoria " + categoria.name());
             }
+            else {
+                System.out.println("\nProductos de la categoria " + categoria.name() + ": ");
+                for (Producto producto : productosPorCategoria) {
+                    producto.mostrarInfo();
+                }
+            }            
         }        
     }
     
@@ -130,10 +135,14 @@ public class ServicioInventario {
         
         ArrayList<Producto> productosPorPrecio = inventario.filtrarProductosPorPrecio(min, max);
         
-        System.out.println("\nProductos encontrados con precio entre $" + min + " y $" + max + ": ");
-        for (Producto producto : productosPorPrecio) {
-            producto.mostrarInfo();
-        }        
+        if (!productosPorPrecio.isEmpty()) {
+            System.out.println("\nProductos encontrados con precio entre $" + min + " y $" + max + ": ");
+            for (Producto producto : productosPorPrecio) {
+                producto.mostrarInfo();
+            }  
+        } 
+        else
+            System.out.println("No se encontraron productos para el rango ingresado.");
     }
     
     public void mostrarCategorias() {
