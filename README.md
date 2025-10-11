@@ -11,6 +11,7 @@ Este repositorio contiene todos los trabajos prácticos realizados en Programaci
 * TP n°3 - Introducción a POO
 * TP n°4 - POO
 * TP n°5 - UML
+* TP n°6 - Colecciones
 
 ---
 
