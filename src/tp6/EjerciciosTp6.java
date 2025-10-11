@@ -23,7 +23,8 @@ public class EjerciciosTp6 {
             System.out.println("");
             switch (option) {
                 case 1 -> ejecutarInventario();
-                case 2 -> ejecutarBiblioteca();                
+                case 2 -> ejecutarBiblioteca();    
+                case 3 -> ejecutarUniversidad();
                 default -> System.out.println("Error: Opcion Invalida. Vuelva a intentarlo.");
             }
             
@@ -47,7 +48,8 @@ public class EjerciciosTp6 {
             System.out.println("------------------------------------------------------------------");
             System.out.println("Elija una opcion:");
             System.out.println("1. Inventario de Productos.");
-            System.out.println("2. Biblioteca.");            
+            System.out.println("2. Biblioteca.");   
+            System.out.println("3. Universidad");
     }
     
     static void ejecutarInventario() {
@@ -158,5 +160,62 @@ public class EjerciciosTp6 {
         System.out.println("6. Mostrar autores disponibles.");
         System.out.println("7. Agregar nuevo libro.");
         System.out.println("8. Mostrar este menu nuevamente.");
+    }
+    
+    static void ejecutarUniversidad(){
+        Scanner input = new Scanner(System.in);
+        
+        // Servicio de biblioteca (creacion de biblioteca)
+        System.out.print("Ingresa un nombre para la universidad: ");
+        String nombre = input.nextLine();
+        ServicioUniversidad servicio = new ServicioUniversidad(nombre);
+        
+        // creacion y adicion de profesores y cursos a la univerdad
+        servicio.seedUniversidad();
+        
+        // Ver menu de acciones para la universidad
+        verMenuUniversidad();
+        boolean repeatFlag = true;
+        
+        while (repeatFlag) {
+            System.out.println("");
+            System.out.println("Ingrese una opcion para realizar (del 0 al 10). Utiles: 0 = salir; 10 = ver menu.");
+            System.out.print("Opcion: ");
+            int option = Integer.parseInt(input.nextLine());
+
+            System.out.println("");
+            switch (option) {
+                case 0 -> repeatFlag = false;
+                case 1 -> servicio.agregarProfesor();
+                case 2 -> servicio.agregarCurso();
+                case 3 -> servicio.asignarProfesorACurso();
+                case 4 -> servicio.listarCursosYSuProfesor();
+                case 5 -> servicio.listarProfesoresYSusCursos();
+                case 6 -> servicio.actualizarProfesorDeCurso();
+                case 7 -> servicio.eliminarCurso();
+                case 8 -> servicio.eliminarProfesor();
+                case 9 -> servicio.reporteDeCursos();
+                case 10 -> verMenuAccionesInventario();
+                default -> System.out.println("Error: Opcion Invalida. Vuelva a intentarlo.");
+            }
+        }
+    }
+    
+    static void verMenuUniversidad() {
+        System.out.println("------------------------------------------------------------------");
+        System.out.println("Acciones de Universidad");
+        System.out.println("------------------------------------------------------------------");
+        System.out.println("Elija una opcion:");
+        System.out.println("0. Salir.");
+        System.out.println("1. Agregar un profesor.");
+        System.out.println("2. Agregar un curso.");
+        System.out.println("3. Asignar un profesor a un curso.");
+        System.out.println("4. Listar cursos disponibles (con su profesor).");
+        System.out.println("5. Listar profesores disponibles (con sus cursos).");
+        System.out.println("6. Actualizar profesor en curso.");
+        System.out.println("7. Eliminar un curso.");
+        System.out.println("8. Eliminar un profesor.");
+        System.out.println("9. Reporte de cursos por profesor");
+        System.out.println("10. Mostrar este menu nuevamente.");
     }
 }

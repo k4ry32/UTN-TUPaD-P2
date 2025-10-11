@@ -9,6 +9,9 @@ import tp6.biblioteca.Biblioteca;
 import tp6.inventario.CategoriaProducto;
 import tp6.inventario.Inventario;
 import tp6.inventario.Producto;
+import tp6.universidad.Curso;
+import tp6.universidad.Profesor;
+import tp6.universidad.Universidad;
 
 /**
  *
@@ -66,5 +69,35 @@ public class Seeder {
         biblioteca.agregarLibro("9780007527557", "Death on the Nile", 2001, autor5);
         
         System.out.println("Se agregaron libros a la biblioteca.");
+    }
+    
+    public void seedUniversidad(Universidad universidad) {
+        Profesor profesor1 = new Profesor("Juan Ferrer", "Ciencias");
+        Profesor profesor2 = new Profesor("Sabrina Toledo", "Lenguas Extranjeras");
+        Profesor profesor3 = new Profesor("Marcela Viltes", "Tecnología e Informática");
+        Profesor profesor4 = new Profesor("Diego Cortes", "Tecnología e Informática");
+                
+        universidad.agregarProfesor(profesor1);
+        universidad.agregarProfesor(profesor2);
+        universidad.agregarProfesor(profesor3);
+        universidad.agregarProfesor(profesor4);
+        
+        Curso curso1 = new Curso("MAT-I", "Matematica I", profesor1);
+        Curso curso2 = new Curso("EST-I", "Estadistica I", profesor1);
+        Curso curso3 = new Curso("ING-I", "Ingles I", profesor2);
+        Curso curso4 = new Curso("ING-II", "Ingles II", profesor2);
+        Curso curso5 = new Curso("PRG-I", "Programacion I", profesor3);
+        Curso curso6 = new Curso("PRG-II", "Programacion II", profesor3);
+        Curso curso7 = new Curso("BD-I", "Bases de Datos", profesor4);
+        
+        universidad.agregarCurso(curso1);
+        universidad.agregarCurso(curso2);
+        universidad.agregarCurso(curso3);
+        universidad.agregarCurso(curso4);
+        universidad.agregarCurso(curso5);
+        universidad.agregarCurso(curso6);
+        universidad.agregarCurso(curso7);
+        
+        System.out.println("Se agregaron cursos y profesores a la universidad.");
     }
 }
