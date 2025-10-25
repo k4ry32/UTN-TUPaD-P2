@@ -5,6 +5,7 @@ import tp2.EjerciciosTp2;
 import tp3.EjerciciosTp3;
 import tp4.EjercicioTp4;
 import tp6.EjerciciosTp6;
+import tp7.EjerciciosTp7;
 
 /**
  *
@@ -21,6 +22,7 @@ public class Practica {
         EjerciciosTp3 tp3 = new EjerciciosTp3();
         EjercicioTp4 tp4 = new EjercicioTp4();
         EjerciciosTp6 tp6 = new EjerciciosTp6();
+        EjerciciosTp7 tp7 = new EjerciciosTp7();
         
         System.out.println("-----------------------------------------------------------------------------------------");
         System.out.println("Bienvenido a los trabajos practicos de la materia Programacion II");
@@ -33,6 +35,7 @@ public class Practica {
         System.out.println("2. TP n° 3");
         System.out.println("3. TP n° 4");
         System.out.println("4. TP n° 6");
+        System.out.println("5. TP n° 7");
         System.out.println("0. Salir");
         
         System.out.print("\nIngrese una opcion: ");
@@ -44,6 +47,7 @@ public class Practica {
             case 2 -> tp3.ejecutar();
             case 3 -> tp4.ejecutar();
             case 4 -> tp6.ejecutar();
+            case 5 -> tp7.ejecutar();
             default -> System.out.println("Error: Opcion Invalida.");
         }
     }

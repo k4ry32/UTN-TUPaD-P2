@@ -12,6 +12,7 @@ Este repositorio contiene todos los trabajos prácticos realizados en Programaci
 * TP n°4 - POO
 * TP n°5 - UML
 * TP n°6 - Colecciones
+* TP n°7 - Herencia y Polimorfismo
 
 ---
 
